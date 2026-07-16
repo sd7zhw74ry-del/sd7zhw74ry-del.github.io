@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <title>Inicio | SerTecMec</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- Control del menú lateral -->
+  <input
+    class="menu-toggle"
+    type="checkbox"
+    id="menuToggle"
+  >
+
+  <!-- Encabezado -->
+  <header class="site-header">
+
+    <!-- Botón para abrir el menú -->
+    <label
+      class="menu-button"
+      for="menuToggle"
+      aria-label="Abrir menú"
+    >
+      &#9776;
+    </label>
+
+    <!-- Logo y nombre de la empresa -->
+    <a
+      class="header-brand"
+      href="index.html"
+      aria-label="Ir al inicio de SerTecMec"
+    >
+
+      <img
+        class="header-brand-image"
+        src="assets/logo-sertemecc.png"
+        alt="Logo de SerTecMec"
+      >
+
+      <span class="header-brand-name">
+        SERTECMEC <span>&amp; HIDRÁULICAA S.A DE C.V</span>
+      </span>
+
+    </a>
+
+  </header>
+
+  <!-- Menú lateral -->
+  <aside class="drawer">
+
+    <label
+      class="drawer-close"
+      for="menuToggle"
+      aria-label="Cerrar menú"
+    >
+      &times;
+    </label>
+
+    <strong>SerTecMec</strong>
+
+    <nav>
+      <a class="active" href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="forlog.html">Forlog</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+  </aside>
+
+  <!-- Fondo oscuro del menú -->
+  <label
+    class="drawer-backdrop"
+    for="menuToggle"
+  ></label>
+
+  <!-- Contenido principal -->
+  <main>
+
+    <section class="hero">
+
+      <div class="image-background" aria-hidden="true"></div>
+
+      <div class="hero-copy">
+
+        <p class="eyebrow">
+          Servicio técnico profesional mecánico naval
+        </p>
+
+        <h1>
+          Soluciones mecánicas e hidráulicas para operación industrial y naval.
+        </h1>
+
+        <p>
+          SERTECMEC &amp; HIDRÁULICAA S.A. DE C.V. ofrece mantenimiento,
+          reparación y fabricación especializada para equipos, sistemas
+          hidráulicos y maquinaria de trabajo pesado.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="primary-button"
+            href="servicios.html"
+          >
+            Ver servicios
+          </a>
+
+          <a
+            class="secondary-button"
+            href="contacto.html"
+          >
+            Contactar
+          </a>
+
+          <a
+            class="secondary-button"
+            href="forlog.html"
+          >
+            Logística
+          </a>
+
+        </div>
+
+      </div>
+
+      <article class="feature-card">
+
+        <span>30 años</span>
+
+        <strong>
+          Experiencia técnica
+        </strong>
+
+        <p class="feature-description">
+          Atención enfocada en seguridad, calidad y continuidad operativa.
+        </p>
+
+      </article>
+    </section>
+  </main>
+
+  <footer class="index-footer">
+    <a
+      class="facebook-link"
+      href="https://www.facebook.com/share/19AsBo8X9a/?mibextid=wwXIfr"
+      rel="noopener"
+      target="_blank"
+    >
+      <img
+        src="assets/facebook.png"
+        alt="Facebook"
+      >
+      <span>Página Oficial de Facebook</span>
+    </a>
+
+    <div class="studio-credit">
+      <span>Design by:</span>
+      <a href="https://sd7zhw74ry-del.github.io/market_studios/data_html/index.html">
+        Market Studios
+      </a>
+    </div>
+  </footer>
+</body>
+
+</html>

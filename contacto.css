@@ -1,0 +1,375 @@
+:root {
+  --cream: #faf5ea;
+  --navy: #073d5b;
+  --orange: #ff5a00;
+  --gold: #f6ad00;
+  --black: #050505;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--cream);
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+}
+
+.menu-toggle {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 76px;
+  padding: 8px 24px;
+  border-bottom: 1px solid rgba(7, 61, 91, .14);
+  background: rgba(250, 245, 234, .94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.header-brand:hover {
+  opacity: .85;
+  transform: translateY(-1px);
+}
+
+.header-brand-image {
+  width: 54px;
+  height: 54px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.header-brand-name {
+  color: var(--orange);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: clamp(18px, 2vw, 27px);
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.menu-button,
+.drawer-close {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: var(--white);
+  background: var(--navy);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 900;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.menu-button:hover,
+.drawer-close:hover {
+  background: var(--orange);
+  transform: scale(1.04);
+}
+
+.drawer {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 30;
+  width: min(350px, 86vw);
+  padding: 24px;
+  color: var(--white);
+  background: var(--navy);
+  box-shadow: 24px 0 70px rgba(0, 0, 0, .32);
+  transform: translateX(-110%);
+  transition: transform .28s ease;
+}
+
+.menu-toggle:checked ~ .drawer {
+  transform: translateX(0);
+}
+
+.drawer strong {
+  display: block;
+  margin: 18px 0 24px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.drawer nav {
+  display: grid;
+  gap: 12px;
+}
+
+.drawer a {
+  padding: 13px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 15px;
+  background: var(--black);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.drawer a:hover,
+.drawer a.active {
+  background: var(--orange);
+  transform: translateX(4px);
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, .48);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .28s ease;
+}
+
+.menu-toggle:checked ~ .drawer-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+main {
+  flex: 1;
+}
+
+.page-section {
+  min-height: calc(100vh - 160px);
+  display: grid;
+  place-items: center;
+  padding: 78px 6vw;
+}
+
+.contact-form {
+  width: min(1220px, 100%);
+  display: grid;
+  gap: 18px;
+  padding: 30px;
+  border-radius: 26px;
+  color: #fff;
+  background: var(--navy);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .14);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: clamp(38px, 5.4vw, 66px);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, .8fr)
+    minmax(0, 1.2fr)
+    minmax(0, 1.2fr)
+    minmax(0, 1.35fr);
+  gap: 14px;
+}
+
+.contact-grid p {
+  min-height: 78px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .1);
+  font-size: clamp(16px, 1.12vw, 20px);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.contact-grid .address-card {
+  text-align: center;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  min-height: 130px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 15px;
+  padding: 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, .1);
+  outline: none;
+}
+
+.contact-form input {
+  min-height: 52px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, .56);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, .14);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.form-actions button {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 15px;
+  padding: 0 20px;
+  color: #fff;
+  background: var(--orange);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.form-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.studio-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+  min-height: 76px;
+  padding: 0 6vw;
+  color: rgba(0, 0, 0, .58);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.studio-footer a {
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+@media(max-width:1100px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid .address-card {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(680px, 100%);
+  }
+}
+
+@media(max-width:900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-footer {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid .address-card {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .site-header {
+    min-height: 66px;
+    gap: 11px;
+    padding: 7px 12px;
+  }
+
+  .menu-button,
+  .drawer-close {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+
+  .header-brand-image {
+    width: 43px;
+    height: 43px;
+  }
+
+  .header-brand-name {
+    font-size: clamp(13px, 4vw, 18px);
+    white-space: normal;
+  }
+}
