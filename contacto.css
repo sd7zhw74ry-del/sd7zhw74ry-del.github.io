@@ -209,11 +209,7 @@ h1 {
 
 .contact-grid {
   display: grid;
-  grid-template-columns:
-    minmax(0, .8fr)
-    minmax(0, 1.2fr)
-    minmax(0, 1.2fr)
-    minmax(0, 1.35fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -225,10 +221,6 @@ h1 {
   font-size: clamp(16px, 1.12vw, 20px);
   line-height: 1.6;
   overflow-wrap: anywhere;
-}
-
-.contact-grid .address-card {
-  text-align: center;
 }
 
 .contact-form label {
@@ -315,18 +307,6 @@ h1 {
   border-bottom: 1px solid #000;
 }
 
-@media(max-width:1100px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .contact-grid .address-card {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: min(680px, 100%);
-  }
-}
-
 @media(max-width:900px) {
   .form-grid {
     grid-template-columns: 1fr;
@@ -342,11 +322,6 @@ h1 {
 @media (max-width: 600px) {
   .contact-grid {
     grid-template-columns: 1fr;
-  }
-
-  .contact-grid .address-card {
-    grid-column: auto;
-    width: 100%;
   }
 
   .site-header {
