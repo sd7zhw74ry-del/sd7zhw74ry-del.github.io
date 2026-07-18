@@ -1,70 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>Servicios | SerTecMec</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-  <link href="servicios.css" rel="stylesheet"/>
- </head>
- <body>
-  <input class="menu-toggle" id="menuToggle" type="checkbox"/>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="servicios.css"
+  >
+</head>
+
+<body>
+
+  <!-- Control del menú lateral -->
+  <input
+    class="menu-toggle"
+    id="menuToggle"
+    type="checkbox"
+  >
+
+  <!-- Encabezado -->
   <header class="site-header">
-   <label aria-label="Abrir menú" class="menu-button" for="menuToggle">☰</label>
-   <a aria-label="Ir al inicio de SerTecMec" class="header-brand" href="index.html">
-    <img alt="Logo de SerTecMec" class="header-brand-image" src="assets/logo-sertemecc.png"/>
-    <span class="header-brand-name">SERTECMEC <span>&amp; HIDRÁULICAA S.A DE C.V</span></span>
-   </a>
+
+    <label
+      class="menu-button"
+      for="menuToggle"
+      aria-label="Abrir menú"
+    >
+      ☰
+    </label>
+
+    <a
+      class="header-brand"
+      href="index.html"
+      aria-label="Ir al inicio de SerTecMec"
+    >
+      <img
+        class="header-brand-image"
+        src="assets/logo-sertemecc.png"
+        alt="Logo de SerTecMec"
+      >
+
+      <span class="header-brand-name">
+        SERTECMEC
+        <span>&amp; HIDRÁULICA S.A. DE C.V.</span>
+      </span>
+    </a>
+
   </header>
+
+  <!-- Menú lateral -->
   <aside class="drawer">
-   <label aria-label="Cerrar menú" class="drawer-close" for="menuToggle">×</label>
-   <strong>SerTecMec</strong>
-   <nav>
-    <a href="index.html">Inicio</a>
-    <a class="active" href="servicios.html">Servicios</a>
-    <a href="forlog.html">Forlog</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-   </nav>
+
+    <label
+      class="drawer-close"
+      for="menuToggle"
+      aria-label="Cerrar menú"
+    >
+      ×
+    </label>
+
+    <strong>SerTecMec</strong>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a class="active" href="servicios.html">Servicios</a>
+      <a href="forlog.html">Forlog</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
   </aside>
-  <label aria-label="Cerrar menú" class="drawer-backdrop" for="menuToggle"></label>
+
+  <!-- Fondo oscuro del menú -->
+  <label
+    class="drawer-backdrop"
+    for="menuToggle"
+    aria-label="Cerrar menú"
+  ></label>
+
+  <!-- Contenido principal -->
   <main>
-   <section class="page-section">
-    <p class="eyebrow">Nuestra oferta</p>
-    <h1>Servicios técnicos para sistemas mecánicos e hidráulicos</h1>
-    <div class="card-grid">
-     <article>
-      <span></span>
-      <h3>Mecánica naval</h3>
-      <p>Mantenimiento y reparación de equipos mecánicos en entorno naval e industrial.</p>
-      <a class="interest-button" href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Mec%C3%A1nica%20naval.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." rel="noopener" target="_blank">Me interesa</a>
-     </article>
-     <article>
-      <span></span>
-      <h3>Hidráulica</h3>
-      <p>Revisión, reparación y soporte para sistemas hidráulicos de trabajo pesado.</p>
-      <a class="interest-button" href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Hidr%C3%A1ulica.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." rel="noopener" target="_blank">Me interesa</a>
-     </article>
-     <article>
-      <span></span>
-      <h3>Mangueras hidráulicas</h3>
-      <p>Fabricación y reemplazo de mangueras hidráulicas según requerimiento operativo.</p>
-      <a class="interest-button" href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Mangueras%20hidr%C3%A1ulicas.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." rel="noopener" target="_blank">Me interesa</a>
-     </article>
-     <article>
-      <span></span>
-      <h3>Refacciones</h3>
-      <p>Suministro y gestión de refacciones hidráulicas, conexiones y componentes relacionados.</p>
-      <a class="interest-button" href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Refacciones.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." rel="noopener" target="_blank">Me interesa</a>
-     </article>
-    </div>
-   </section>
+
+    <!-- Imagen decorativa de fondo -->
+    <div
+      class="forlog-background"
+      aria-hidden="true"
+    ></div>
+
+    <section class="page-section">
+
+      <p class="eyebrow">
+        Nuestra oferta
+      </p>
+
+      <h1>
+        Servicios técnicos para sistemas mecánicos e hidráulicos
+      </h1>
+
+      <div class="card-grid">
+
+        <article>
+          <span></span>
+
+          <h3>Mecánica naval</h3>
+
+          <p>
+            Mantenimiento y reparación de equipos mecánicos en
+            entorno naval e industrial.
+          </p>
+
+          <a
+            class="interest-button"
+            href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Mec%C3%A1nica%20naval.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Me interesa
+          </a>
+        </article>
+
+        <article>
+          <span></span>
+
+          <h3>Hidráulica</h3>
+
+          <p>
+            Revisión, reparación y soporte para sistemas hidráulicos
+            de trabajo pesado.
+          </p>
+
+          <a
+            class="interest-button"
+            href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Hidr%C3%A1ulica.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Me interesa
+          </a>
+        </article>
+
+        <article>
+          <span></span>
+
+          <h3>Mangueras hidráulicas</h3>
+
+          <p>
+            Fabricación y reemplazo de mangueras hidráulicas según
+            requerimiento operativo.
+          </p>
+
+          <a
+            class="interest-button"
+            href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Mangueras%20hidr%C3%A1ulicas.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Me interesa
+          </a>
+        </article>
+
+        <article>
+          <span></span>
+
+          <h3>Refacciones</h3>
+
+          <p>
+            Suministro y gestión de refacciones hidráulicas,
+            conexiones y componentes relacionados.
+          </p>
+
+          <a
+            class="interest-button"
+            href="https://wa.me/523141483820?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Refacciones.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Me interesa
+          </a>
+        </article>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- Pie de página -->
   <footer class="studio-footer">
-   <span>Design by:</span>
-   <a href="https://urbansshop.org">Market Studios</a>
+    <span>Design by:</span>
+
+    <a
+      href="https://sd7zhw74ry-del.github.io/market_studios/data_html/index.html"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Market Studios
+    </a>
   </footer>
- </body>
+
+</body>
 </html>
