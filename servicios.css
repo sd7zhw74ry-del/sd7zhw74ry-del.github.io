@@ -4,27 +4,43 @@
   --orange: #ff5a00;
   --gold: #f6ad00;
   --black: #050505;
-  --white: #fff;
+  --white: #ffffff;
   --ink: #101010;
 }
 
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
 }
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
   margin: 0;
+
+  color: var(--ink);
   background: var(--cream);
+
   font-family: Montserrat, Arial, sans-serif;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
+
+/* =========================
+   CONTROL DEL MENÚ
+========================= */
 
 .menu-toggle {
   position: fixed;
@@ -32,66 +48,96 @@ a {
   pointer-events: none;
 }
 
+/* =========================
+   ENCABEZADO
+========================= */
+
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 50;
+
+  min-height: 76px;
+
   display: flex;
   align-items: center;
   gap: 18px;
-  min-height: 76px;
+
   padding: 8px 24px;
-  border-bottom: 1px solid rgba(7, 61, 91, .14);
-  background: rgba(250, 245, 234, .94);
+
+  border-top: 3px solid var(--black);
+  border-bottom: 1px solid rgba(7, 61, 91, 0.14);
+
+  background: rgba(250, 245, 234, 0.96);
+
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .header-brand {
+  min-width: 0;
+
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  min-width: 0;
-  transition: opacity .2s ease, transform .2s ease;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .header-brand:hover {
-  opacity: .85;
+  opacity: 0.86;
   transform: translateY(-1px);
 }
 
 .header-brand-image {
   width: 54px;
   height: 54px;
+
   display: block;
   flex-shrink: 0;
+
   object-fit: contain;
   object-position: center;
 }
 
 .header-brand-name {
   color: var(--orange);
-  font-family: Montserrat, Arial, sans-serif;
+
   font-size: clamp(18px, 2vw, 27px);
-  font-weight: 700;
+  font-weight: 750;
   line-height: 1.1;
+
   white-space: nowrap;
 }
+
+/* =========================
+   BOTONES DEL MENÚ
+========================= */
 
 .menu-button,
 .drawer-close {
   width: 48px;
   height: 48px;
+
   display: grid;
   place-items: center;
   flex-shrink: 0;
+
   border-radius: 14px;
+
   color: var(--white);
   background: var(--navy);
+
   cursor: pointer;
+
   font-size: 22px;
   font-weight: 900;
-  transition: background .2s ease, transform .2s ease;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .menu-button:hover,
@@ -100,17 +146,25 @@ a {
   transform: scale(1.04);
 }
 
+/* =========================
+   MENÚ LATERAL
+========================= */
+
 .drawer {
   position: fixed;
   inset: 0 auto 0 0;
-  z-index: 30;
+  z-index: 100;
+
   width: min(350px, 86vw);
   padding: 24px;
+
   color: var(--white);
   background: var(--navy);
-  box-shadow: 24px 0 70px rgba(0, 0, 0, .32);
+
+  box-shadow: 24px 0 70px rgba(0, 0, 0, 0.32);
+
   transform: translateX(-110%);
-  transition: transform .28s ease;
+  transition: transform 0.28s ease;
 }
 
 .menu-toggle:checked ~ .drawer {
@@ -119,8 +173,9 @@ a {
 
 .drawer strong {
   display: block;
+
   margin: 18px 0 24px;
-  font-family: Montserrat, Arial, sans-serif;
+
   font-size: 22px;
   font-weight: 700;
 }
@@ -130,32 +185,44 @@ a {
   gap: 12px;
 }
 
-.drawer a {
+.drawer nav a {
   padding: 13px 16px;
+
   border: 1px solid var(--gold);
   border-radius: 15px;
+
+  color: var(--white);
   background: var(--black);
-  font-family: Montserrat, Arial, sans-serif;
+
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0;
-  transition: background .2s ease, transform .2s ease;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.drawer a:hover,
-.drawer a.active {
+.drawer nav a:hover,
+.drawer nav a.active {
   background: var(--orange);
   transform: translateX(4px);
 }
 
+/* =========================
+   FONDO DEL MENÚ LATERAL
+========================= */
+
 .drawer-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 20;
-  background: rgba(0, 0, 0, .48);
+  z-index: 90;
+
+  background: rgba(0, 0, 0, 0.48);
+
   opacity: 0;
   pointer-events: none;
-  transition: opacity .28s ease;
+
+  transition: opacity 0.28s ease;
 }
 
 .menu-toggle:checked ~ .drawer-backdrop {
@@ -163,18 +230,109 @@ a {
   pointer-events: auto;
 }
 
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
 main {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
   flex: 1;
+
+  background: var(--cream);
 }
 
+/* =========================
+   LOGO DE FONDO SUPERIOR
+========================= */
+
+.forlog-background {
+  position: absolute;
+
+  /*
+    El main ya empieza debajo del header,
+    por eso top: 0 lo coloca justo debajo.
+  */
+  top: 0;
+  right: -10px;
+
+  /*
+    Limita el logo a la zona superior derecha.
+  */
+  width: min(57vw, 900px);
+  height: 400px;
+
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(250, 245, 234, 0.18),
+      rgba(250, 245, 234, 0.18)
+    ),
+    url("assets/logo-sertemecc.png");
+
+  background-repeat: no-repeat;
+
+  /*
+    La primera posición pertenece al degradado.
+    La segunda pertenece al logo.
+  */
+  background-position:
+    center,
+    right top;
+
+  background-size:
+    cover,
+    contain;
+
+  opacity: 0.32;
+  pointer-events: none;
+
+  /*
+    Suaviza el borde izquierdo para que el logo
+    se integre con el fondo de la página.
+  */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 16%,
+    #000000 38%,
+    #000000 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 16%,
+    #000000 38%,
+    #000000 100%
+  );
+}
+
+/* =========================
+   SECCIÓN DE SERVICIOS
+========================= */
+
 .page-section {
-  min-height: calc(100vh - 160px);
+  position: relative;
+  z-index: 1;
+
+  min-height: calc(100vh - 152px);
+
   padding: 78px 6vw;
 }
 
+/* =========================
+   ENCABEZADO DE LA SECCIÓN
+========================= */
+
 .eyebrow {
   margin: 0 0 12px;
+
   color: var(--orange);
+
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 3px;
@@ -189,72 +347,110 @@ h3 {
 
 h1 {
   max-width: 900px;
+
   font-size: clamp(38px, 5.8vw, 70px);
   font-weight: 800;
   line-height: 1.08;
 }
 
+/* =========================
+   TARJETAS
+========================= */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
+
   margin-top: 30px;
 }
 
 .card-grid article {
+  min-width: 0;
+  min-height: 315px;
+
   display: flex;
   flex-direction: column;
-  padding: 26px;
-  border-radius: 24px;
-  color: #fff;
-  background: var(--navy);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, .14);
-}
 
-.card-grid span {
-  color: var(--gold);
-  font-weight: 900;
+  padding: 26px;
+
+  border-radius: 24px;
+
+  color: var(--white);
+  background: var(--navy);
+
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
 }
 
 .card-grid h3 {
   margin: 18px 0 10px;
+
   font-size: 26px;
+  line-height: 1.15;
 }
 
 .card-grid p {
   flex: 1;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 16px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, .72);
 }
+
+/* =========================
+   BOTONES DE WHATSAPP
+========================= */
 
 .interest-button {
   min-height: 48px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   margin-top: 18px;
+  padding: 10px 18px;
+
   border-radius: 15px;
+
   color: var(--black);
   background: var(--gold);
+
   font-weight: 900;
-  transition: .22s ease;
+
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    transform 0.22s ease;
 }
 
 .interest-button:hover {
   color: var(--white);
   background: var(--orange);
+
   transform: translateY(-2px);
 }
 
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
 .studio-footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 7px;
   min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+
   padding: 0 6vw;
-  color: rgba(0, 0, 0, .58);
-  background: transparent;
+
+  color: rgba(0, 0, 0, 0.58);
+  background: var(--cream);
+
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -262,25 +458,49 @@ h1 {
 }
 
 .studio-footer a {
-  color: #000;
-  border-bottom: 1px solid #000;
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
 }
 
-@media(max-width:1050px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* =========================
+   PANTALLAS MEDIANAS
+========================= */
+
+@media (max-width: 1200px) {
+  .forlog-background {
+    right: -60px;
+
+    width: 65vw;
+    height: 390px;
+
+    opacity: 0.27;
+  }
+
+  .card-grid h3 {
+    font-size: 23px;
   }
 }
 
-@media(max-width:700px) {
+/* =========================
+   TABLETAS
+========================= */
+
+@media (max-width: 1050px) {
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .studio-footer {
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
+  .forlog-background {
+    right: -110px;
+
+    width: 78vw;
+    height: 370px;
+
+    opacity: 0.23;
+  }
+
+  .card-grid article {
+    min-height: 300px;
   }
 }
 
@@ -294,12 +514,77 @@ h1 {
     width: 50px;
     height: 50px;
   }
+
+  .header-brand-name {
+    font-size: clamp(16px, 2.8vw, 23px);
+  }
+
+  .page-section {
+    padding-top: 65px;
+  }
+
+  .forlog-background {
+    right: -150px;
+
+    width: 90vw;
+    height: 350px;
+
+    opacity: 0.2;
+  }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 700px) {
+  .page-section {
+    padding: 50px 6vw;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card-grid article {
+    min-height: auto;
+  }
+
+  .forlog-background {
+    top: 0;
+    right: -230px;
+
+    width: 780px;
+    height: 300px;
+
+    opacity: 0.16;
+
+    background-position:
+      center,
+      right top;
+
+    background-size:
+      cover,
+      contain;
+  }
+
+  .studio-footer {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 20px 6vw;
+
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
   .site-header {
     min-height: 66px;
+
     gap: 11px;
+
     padding: 7px 12px;
   }
 
@@ -307,7 +592,9 @@ h1 {
   .drawer-close {
     width: 44px;
     height: 44px;
+
     border-radius: 12px;
+
     font-size: 20px;
   }
 
@@ -323,5 +610,56 @@ h1 {
   .header-brand-name {
     font-size: clamp(13px, 4vw, 18px);
     white-space: normal;
+  }
+
+  h1 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .card-grid article {
+    padding: 22px;
+  }
+
+  .card-grid h3 {
+    font-size: 23px;
+  }
+
+  .forlog-background {
+    right: -260px;
+
+    width: 760px;
+    height: 290px;
+
+    opacity: 0.14;
+  }
+}
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+
+@media (max-width: 420px) {
+  .page-section {
+    padding: 42px 18px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .forlog-background {
+    right: -280px;
+
+    width: 720px;
+    height: 270px;
+
+    opacity: 0.13;
+  }
+
+  .studio-footer {
+    padding: 18px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
   }
 }
